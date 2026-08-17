@@ -1,8 +1,4 @@
-# esp32-tram
-Compact ESP32-S3 multitool featuring CC1101 (Sub-GHz) and NRF24L01 (2.4 GHz) hardware modules.
-
-
-# 🚋 esp32-tram
+#  esp32-tram
 
 **esp32-tram** is a compact, portable wireless audit tool built on the **ESP32-S3 SuperMini**. The project integrates Sub-GHz (CC1101) and 2.4 GHz (NRF24L01) transceivers for RF research and penetration testing.
 
@@ -10,7 +6,7 @@ Compact ESP32-S3 multitool featuring CC1101 (Sub-GHz) and NRF24L01 (2.4 GHz) har
 
 ---
 
-## 🛠 Hardware Stack
+## Hardware Stack
 
 * **MCU:** ESP32-S3 SuperMini (Dual-core @ 240 MHz, Native USB OTG)
 * **Sub-GHz Transceiver:** TI CC1101 (300–928 MHz)
@@ -52,5 +48,37 @@ The recommended development environment is **VS Code** with **PlatformIO**.
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/esp32-tram.git](https://github.com/YOUR_USERNAME/esp32-tram.git)
+   git clone https://github.com/YOUR_USERNAME/esp32-tram.git
    cd esp32-tram
+   ```
+2. Open the project folder in VS Code.
+3. Connect your ESP32-S3 SuperMini via USB-C.
+4. Build and flash:
+   ```bash
+   pio run --target upload
+   ```
+
+---
+
+## Repository Layout
+
+```text
+esp32-tram/
+├── include/              # Header files
+│   ├── config.h          # Hardware configuration & pinouts
+│   └── modules/          # Drivers & app headers
+├── src/
+│   ├── main.cpp          # Entry point & FreeRTOS setup
+│   ├── gui/              # OLED UI engine
+│   └── modules/
+│       ├── subghz/       # CC1101 logic (Sub-GHz)
+│       └── nrf24/        # NRF24L01 logic (2.4 GHz)
+├── platformio.ini        # PlatformIO configuration
+└── README.md
+```
+
+---
+
+##  License
+
+Distributed under the MIT License. See `LICENSE` for details.
